@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 
-url = 'http://books.toscrape.com/index.html'
+url = 'https://books.toscrape.com/index.html'
 
 #Pour récupérer l'ensemble des catégories
 def get_categories(url):
@@ -13,7 +13,7 @@ def get_categories(url):
 		menu = soup.find('ul', {'class': 'nav nav-list'})
 		categories = menu.findAll('a')
 		for categorie in categories:
-			ctg = 'http://books.toscrape.com/' + categorie['href'].replace('/index.html','')
+			ctg = 'http://books.toscrape.com/' + categorie['href'].replace('index.html','')
 			ctgLinks.append(ctg)
 	return ctgLinks[1:]
 
@@ -29,9 +29,10 @@ def get_book_urls(url):
 			bookLinks.append(a)
 			next = soup.find('li', {'class': 'next'})	
 		if next:
-			link = next.find('a')['href']
-			suite = suite = url + link
-			bookLinks += get_book_urls(suite)
+			for page in get_categories(url):
+				page = next.find('a')['href']
+				suite = url + '/' + page
+				bookLinks += get_book_urls(suite)
 	return bookLinks
 
 #Pour récuperer toutes les informations d'un livre
@@ -56,9 +57,14 @@ def get_book_data(url):
 
 try:
 	os.mkdir('pictureData')
+except:
+	pass
+
+try:
 	os.mkdir('Data')
 except:
 	pass
+
 
 ctgLinks = get_categories(url)
 for url in ctgLinks:
@@ -72,12 +78,10 @@ for url in ctgLinks:
 			book_url+','+str(bookData['upc'])+','+bookData['title'].replace(',','').replace(';','').replace('\n','')+
 			','+str(bookData['price_including_tax'])+','+str(bookData['price_excluding_tax'])+
 			','+str(bookData['number_available'])+','+bookData['product_description'].replace('\n','').replace(',','').replace(';','')+
-			','+bookData['category']+','+bookData['review_rating']+','+str(bookData['image_url']+"\n")
+			','+bookData['category'].replace('\n','')+','+bookData['review_rating'].replace('\n','').replace(',','').replace(';','')+','+str(bookData['image_url']+"\n")
 		)
-	file.close()	
-
-for photo in bookData['image_url']:
-	picture = requests.get(bookData['image_url'])
-	image =open('pictureData/' + bookData['title']+'.png', "wb")
-	image.write(picture.content)
+		picture = requests.get(bookData['image_url'])
+		image =open('pictureData/' + bookData['title'].replace(':','').replace('/',' ').replace('"','').replace('*','.').replace('?','')+'.png', "wb")
+		image.write(picture.content)
 	picture.close()
+	file.close()	
