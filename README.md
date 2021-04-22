@@ -15,8 +15,8 @@ Etape n°3 : Attendez que le programme récupère les données jusqu'à ce que l
 	le message suivant : l'extraction de donnée s'est déroulé avec succès !
 
 Etape n°4 : Deux nouveaux dossiers se sont crées à l'emplacement du fichier booktoscrape.py
-	-> Data : pour les données de chaques livres triées en fonction de leur catégorie
-	-> pictureData : pour les premières de couverture de tous les livres sous format .png
+-> Data : pour les données de chaques livres triées en fonction de leur catégorie
+-> pictureData : pour les premières de couverture de tous les livres sous format .png
 
 
 /!\ Relancer le programme fera une mise à jour des données mais supprimera les informations qui ne
