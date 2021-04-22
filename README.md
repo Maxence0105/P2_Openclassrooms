@@ -15,6 +15,7 @@ Etape n°3 : Attendez que le programme récupère les données jusqu'à ce que l
 	le message suivant : l'extraction de donnée s'est déroulé avec succès !
 
 Etape n°4 : Deux nouveaux dossiers se sont crées à l'emplacement du fichier booktoscrape.py
+
 -> Data : pour les données de chaques livres triées en fonction de leur catégorie
 -> pictureData : pour les premières de couverture de tous les livres sous format .png
 
@@ -38,8 +39,9 @@ Step 3: Wait for the program to retrieve the data until the terminal displays
 	the following message: l'extraction de donnée s'est déroulé avec succès !
 
 Step 4: Two new folders were created at the location of the file booktoscrape.py
-	-> Data: for data of each book sorted according to their category
-	-> pictureData: for the front page of all books in .png format
+
+-> Data: for data of each book sorted according to their category
+-> pictureData: for the front page of all books in .png format
 
 /!\ Relaunch the program will update the data but will delete the information that are 
 no longer on the website
