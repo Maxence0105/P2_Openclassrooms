@@ -58,7 +58,7 @@ pip install beautifulsoup4==4.9.3
 /!\ Relancer le programme fera une mise à jour des données mais supprimera les informations qui ne
 sont plus sur le site web
 
-=============================================================================================
+============================================================================================
 
 Booktoscrape is a program to collect data from the website:
 https://books.toscrape.com/
