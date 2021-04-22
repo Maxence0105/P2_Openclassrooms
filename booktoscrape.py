@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 
 url = 'https://books.toscrape.com/index.html'
 
-#Pour récupérer l'ensemble des catégories
+#Pour récupérer l'ensemble des catégories:
 def get_categories(url):
 	ctgLinks = []
 	response = requests.get(url)
@@ -13,11 +13,11 @@ def get_categories(url):
 		menu = soup.find('ul', {'class': 'nav nav-list'})
 		categories = menu.findAll('a')
 		for categorie in categories:
-			ctg = 'http://books.toscrape.com/' + categorie['href'].replace('index.html','')
+			ctg = 'http://books.toscrape.com/' + categorie['href']
 			ctgLinks.append(ctg)
 	return ctgLinks[1:]
 
-#Pour récupérer l'ensemble des livres d'une catégorie
+#Pour récupérer l'ensemble des livres d'une catégorie :
 def get_book_urls(url):
 	bookLinks = []
 	response = requests.get(url)
@@ -27,15 +27,16 @@ def get_book_urls(url):
 		for article in articles:
 			a = article.find('a')['href'].replace('../../..','http://books.toscrape.com/catalogue')
 			bookLinks.append(a)
-			next = soup.find('li', {'class': 'next'})	
-		if next:
-			for page in get_categories(url):
-				page = next.find('a')['href']
-				suite = url + '/' + page
-				bookLinks += get_book_urls(suite)
+#Pour changer de page :
+	next = soup.find('li', {'class': 'next'})	
+	if next:
+		page = next.find('a')['href']
+		suite = url.split('/')
+		suite[-1] = page
+		bookLinks += get_book_urls('/'.join(suite))
 	return bookLinks
 
-#Pour récuperer toutes les informations d'un livre
+#Pour récuperer toutes les informations d'un livre:
 def get_book_data(url):
 	bookData = {}
 	response = requests.get(url)
@@ -65,10 +66,9 @@ try:
 except:
 	pass
 
-
 ctgLinks = get_categories(url)
 for url in ctgLinks:
-	b = url.replace('http://books.toscrape.com/catalogue/category/books/','').replace('/','')
+	b = url.replace('http://books.toscrape.com/catalogue/category/books/','').replace('/index.html','')
 	file = open('Data/'+ b +'.csv', 'w+', encoding="utf-8")
 	file.write('product_page_url,universal_product_code,title,price_including_tax,price_excluding_tax,number_available,product_description,category,review_rating,image_url,\n')		
 	bookLinks = get_book_urls(url)
@@ -77,7 +77,7 @@ for url in ctgLinks:
 		file.write(
 			book_url+','+str(bookData['upc'])+','+bookData['title'].replace(',','').replace(';','').replace('\n','')+
 			','+str(bookData['price_including_tax'])+','+str(bookData['price_excluding_tax'])+
-			','+str(bookData['number_available'])+','+bookData['product_description'].replace('\n','').replace(',','').replace(';','')+
+			','+str(bookData['number_available'])+','+bookData['product_description'].replace('\n','').replace(',','').replace(';','').replace('"','')+
 			','+bookData['category'].replace('\n','')+','+bookData['review_rating'].replace('\n','').replace(',','').replace(';','')+','+str(bookData['image_url']+"\n")
 		)
 		picture = requests.get(bookData['image_url'])
@@ -85,3 +85,5 @@ for url in ctgLinks:
 		image.write(picture.content)
 	picture.close()
 	file.close()	
+
+print('l\'extraction de donnée s\'est déroulé avec succès !')
