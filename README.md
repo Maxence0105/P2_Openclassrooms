@@ -12,17 +12,17 @@ puis lancer la commande : py -m venv (nom de l'environnement).
 #Etape n°2 : Activer votre envrionnement virtuel.
 Si votre invitation de commande est : 
 
-bash/zsh l'éxécution se fera par la commande : source (nom de l'environnement)/bin/activate
+bash/zsh l'éxécution se fera par la commande -> source (nom de l'environnement)/bin/activate
 
-fish l'éxécution se fera par la commande : source (nom de l'environnement)/bin/activate.fish
+fish l'éxécution se fera par la commande -> source (nom de l'environnement)/bin/activate.fish
 
-csh/tcsh l'éxécution se fera par la commande : source (nom de l'environnement)/bin/activate.csh
+csh/tcsh l'éxécution se fera par la commande -> source (nom de l'environnement)/bin/activate.csh
 
-PowerShell Core l'éxécution se fera par la commande : source (nom de l'environnement)/Scripts/activate
+PowerShell Core l'éxécution se fera par la commande -> source (nom de l'environnement)/Scripts/activate
 
-cmd.exe l'éxécution se fera par la commande : C:\\(nom de l'environnement)\\Scripts\\activate.bat
+cmd.exe l'éxécution se fera par la commande -> C:\\(nom de l'environnement)\\Scripts\\activate.bat
 
-PowerShell l'éxécution se fera par la commande : PS C:\\> (nom de l'environnement)\\Scripts\\Activate.ps1
+PowerShell l'éxécution se fera par la commande -> PS C:\\> (nom de l'environnement)\\Scripts\\Activate.ps1
 
 
 
@@ -73,17 +73,17 @@ then run the command: py -m venv (environment name).
 
 If your order invitation is:
 
-bash/zsh the execution will be done by the command: source (name of the environment)/bin/activate
+bash/zsh the execution will be done by the command -> source (name of the environment)/bin/activate
 
-fish execution will be done by the command: source (environment name)/bin/activate.fish
+fish execution will be done by the command -> source (environment name)/bin/activate.fish
 
-csh/tcsh the execution will be done by the command: source (environment name)/bin/activate.csh
+csh/tcsh the execution will be done by the command -> source (environment name)/bin/activate.csh
 
-PowerShell Core the execution will be done by the command: source (name of the environment)/Scripts/activate
+PowerShell Core the execution will be done by the command -> source (name of the environment)/Scripts/activate
 
-cmd.exe the execution will be done by the command: C: (name of the environment) Scripts activate.bat
+cmd.exe the execution will be done by the command -> C: (name of the environment) Scripts activate.bat
 
-PowerShell the execution will be done by the command: PS C: > (name of the environment) Scripts Activate.ps1
+PowerShell the execution will be done by the command -> PS C: > (name of the environment) Scripts Activate.ps1
 
 
 #Step 3: Download the required packages.
