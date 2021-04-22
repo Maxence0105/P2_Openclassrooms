@@ -33,7 +33,7 @@ ou
 
 éxécuter les commandes suivantes:
 
-pip install -r requirement.txt
+pip install -r requierements.txt.txt
 
 
 #Etape n°4: Lancer le programme sur le terminal grâce au code : py booktoscrape.py
