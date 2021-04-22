@@ -8,6 +8,7 @@ https://books.toscrape.com/
 Pour cela positionner l'invitation de commande à l'endroit où vous souhaitez lancer le programme, 
 puis lancer la commande : py -m venv (nom de l'environnement). 
 
+
 #Etape n°2 : Activer votre envrionnement virtuel.
 Si votre invitation de commande est : 
 
@@ -24,6 +25,7 @@ cmd.exe l'éxécution se fera par la commande : C:\\(nom de l'environnement)\\Sc
 PowerShell l'éxécution se fera par la commande : PS C:\\> (nom de l'environnement)\\Scripts\\Activate.ps1
 
 
+
 #Etape n°3: Télécharger les packages nécéssaires.
 vous pouvez retrouver l'ensemble des packages dans le "requierement.txt"
 
@@ -36,10 +38,15 @@ pip install requests==2.25.1
 pip install beautifulsoup4==4.9.3
 
 
+
 #Etape n°4: Lancer le programme sur le terminal grâce au code : py booktoscrape.py
+
+
 
 #Etape n°5 : Attendez que le programme récupère les données jusqu'à ce que le terminal affiche 
 	le message suivant : l'extraction de donnée s'est déroulé avec succès !
+	
+	
 
 #Etape n°6 : Deux nouveaux dossiers se sont crées à l'emplacement du fichier booktoscrape.py
 
