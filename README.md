@@ -30,16 +30,16 @@ Booktoscrape is a program to collect data from the website:
 https://books.toscrape.com/
 
 
-Step 1: Once the "booktoscrape.py" code has been retrieved, please download the required packages
+#Step 1: Once the "booktoscrape.py" code has been retrieved, please download the required packages
 	when the program is launched in your virtual environment
 	(you can find all the packages in the "requierement.txt")
 
-Step 2: Launch the program on the terminal using the code: py booktoscrape.py
+#Step 2: Launch the program on the terminal using the code: py booktoscrape.py
 
-Step 3: Wait for the program to retrieve the data until the terminal displays 
+#Step 3: Wait for the program to retrieve the data until the terminal displays 
 	the following message: l'extraction de donnée s'est déroulé avec succès !
 
-Step 4: Two new folders were created at the location of the file booktoscrape.py
+#Step 4: Two new folders were created at the location of the file booktoscrape.py
 
 -> Data: for data of each book sorted according to their category
 
