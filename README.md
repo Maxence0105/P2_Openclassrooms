@@ -56,7 +56,7 @@ pip install beautifulsoup4==4.9.3
 
 
 /!\ Relancer le programme fera une mise à jour des données mais supprimera les informations qui ne
-sont plus sur le site web
+sont plus sur le site web !!
 
 ============================================================================================
 
@@ -115,4 +115,4 @@ PowerShell the execution will be done by the command: PS C:  > (name of the envi
 -> pictureData: for the front page of all books in .png format
 
 /!\ Relaunch the program will update the data but will delete the information that are 
-no longer on the website
+no longer on the website !!
