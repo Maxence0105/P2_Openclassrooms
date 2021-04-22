@@ -33,10 +33,7 @@ ou
 
 éxécuter les commandes suivantes:
 
-pip install requests==2.25.1
-
-pip install beautifulsoup4==4.9.3
-
+pip install -r requirement.txt
 
 
 #Etape n°4: Lancer le programme sur le terminal grâce au code : py booktoscrape.py
